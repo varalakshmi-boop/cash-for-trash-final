@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash for Trash</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #e0f7e9;
+        }
+        .container {
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            width: 50%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .hidden { display: none; }
+        .category img { width: 100px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div id="welcomePage" class="container">
+        <h1>Welcome to Cash for Trash</h1>
+        <img src="waste-image.jpg" alt="Waste Management">
+        <br><br>
+        <button onclick="showPage('signUpPage')">Continue</button>
+    </div>
+
+    <div id="signUpPage" class="container hidden">
+        <h2>Sign Up</h2>
+        <button onclick="showPage('signUpSeller')">Sign Up as Seller</button>
+        <button onclick="showPage('signUpBuyer')">Sign Up as Buyer</button>
+    </div>
+
+    <div id="signUpSeller" class="container hidden">
+        <h2>Seller Sign-Up</h2>
+        <input type="text" placeholder="Name"><br><br>
+        <input type="email" placeholder="Email"><br><br>
+        <input type="tel" placeholder="Phone Number"><br><br>
+        <button onclick="showPage('loginPage')">Sign Up</button>
+    </div>
+
+    <div id="signUpBuyer" class="container hidden">
+        <h2>Buyer Sign-Up</h2>
+        <input type="text" placeholder="Name"><br><br>
+        <input type="email" placeholder="Email"><br><br>
+        <input type="tel" placeholder="Phone Number"><br><br>
+        <input type="text" placeholder="Organization Name"><br><br>
+        <input type="text" placeholder="Address"><br><br>
+        <textarea placeholder="Description About You"></textarea><br><br>
+        <button onclick="window.location.href='wasteInfoPage.html'">Sign Up</button>
+    </div>
+
+    <div id="loginPage" class="container hidden">
+        <h2>Login</h2>
+        <input type="text" placeholder="Name"><br><br>
+        <input type="tel" placeholder="Phone Number"><br><br>
+        <button onclick="showPage('mainPage')">Continue</button>
+    </div>
+
+    <div id="mainPage" class="container hidden">
+        <h2>Welcome to Cash for Trash!</h2>
+        <p>What would you like to sell?</p>
+        <div class="category">
+            <img src="ewaste.jpg" onclick="showPage('subCategoryPage')">
+            <img src="clothes.jpg" onclick="showPage('subCategoryPage')">
+            <img src="metal.jpg" onclick="showPage('subCategoryPage')">
+            <img src="plastic.jpg" onclick="showPage('subCategoryPage')">
+        </div>
+    </div>
+
+    <div id="subCategoryPage" class="container hidden">
+        <h2>Select Subcategory</h2>
+        <p>Upload images:</p>
+        <input type="file" multiple><br><br>
+        <p>Select Pickup Date:</p>
+        <input type="date"><br><br>
+        <button onclick="showPage('confirmationPage')">Confirm</button>
+    </div>
+
+    <div id="confirmationPage" class="container hidden">
+        <h2>Thanks for selling!</h2>
+        <p>Pickup Confirmed</p>
+        <p>Collector Contact: 9876543210</p>
+        <p>Pickup Date: Selected Date</p>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.container').forEach(page => page.classList.add('hidden'));
+            document.getElementById(pageId).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash for Trash</title>
+    <style>
+        /* General Styles */
+        .upload-image-button {
+            display: inline-block;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            text-align: center;
+        }
+
+        .upload-image-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .upload-image-button:active {
+            transform: scale(0.95);
+        }
+
+        #image-preview {
+            margin-top: 10px;
+            max-width: 200px;
+            height: auto;
+            display: block;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('cash for trash.jpg'); /* Replace with your image URL */
+            background-size: cover; /* Make the image cover the entire page */
+            background-position: center; /* Position the image in the center */
+            background-attachment: fixed; /* Keep the image fixed while scrolling */
+        }
+
+        h1 {
+            font-size: 36px;
+            color:#000000;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ffcc00;
+            font-size: 20px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        /* Welcome Page */
+        .welcome-container {
+            background-image: url('background.jpg');
+            background-size: cover;
+            color: white;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .welcome-container h1 {
+            font-size: 50px;
+        }
+
+        /* About Section */
+        .about-section {
+            display: none;
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: left;
+            font-size: 18px;
+            color: black;
+        }
+
+        /* Registration Page */
+        .registration-container input, .registration-container button {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            border-radius: 4px;
+        }
+
+        .registration-container input {
+            border: 1px solid #ccc;
+        }
+
+        .registration-container button {
+            background-color: #007bff;
+            color: white;
+        }
+
+        /* Waste Types Page */
+        .waste-types-container {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .waste-types-container table {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .waste-types-container td {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .waste-types-container img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        .waste-types-container a {
+            color: #007bff;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        /* Upload Waste Page */
+        .upload-container textarea, .upload-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            border-radius: 4px;
+        }
+
+        .upload-container button {
+            background-color: #28a745;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+        }
+
+        .upload-container textarea {
+            height: 150px;
+        }
+
+        /* Green Text for Waste Types Page */
+        .waste-types-container p {
+            color: green;
+        }
+
+        /* Back Button Style */
+        .back-button {
+            background-color: #28a745;
+            color: white;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .back-button:hover {
+            background-color: #218838;
+        }
+
+        .upload-container .upload-image-button {
+            background-color: #007bff;
+            margin-top: 20px;
+        }
+
+        .upload-container .upload-image-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* End Page Styles */
+        .contact-details {
+            margin-top: 20px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .uploaded-image {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .uploaded-image img {
+            max-width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Welcome Page -->
+    <div class="welcome-container" id="welcome-page" style="display: block;">
+        <h1 id="welcome-heading" style="color:black;font-family:italic";>Welcome to Ca$h for Tra$h</h1>
+        <p style="color:brown";><i>"Your waste, our responsibility. We collect it and you earn from it!"</i></p>
+        <button onclick="showRegistrationPage()">Go to Registration</button>
+        <button onclick="toggleAboutSection()">About</button>
+        
+        <!-- About Section -->
+        <div class="about-section" id="about-section">
+            <h2>About Ca$h for Tra$h</h2>
+            <p>At Ca$h for Tra$h, we believe that waste can be a valuable resource. We provide an easy and rewarding way for individuals and businesses to recycle their waste. By participating in our program, you not only contribute to the environment but also earn money for doing so. We collect various types of waste, including e-waste, plastic, metal, old clothes, and more. Join us in making a positive impact on the planet!</p>
+        </div>
+    </div>
+
+    <!-- Registration Page -->
+    <div class="container" id="registration-page" style="display: none;">
+        <h1>Register Your Account</h1>
+        <form class="registration-container" id="registration-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" required>
+            <button type="button" onclick="validateForm()">Submit</button>
+        </form>
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+
+    <script>
+        let uploadedImageUrl = '';  // Variable to hold the uploaded image URL
+
+        // History of visited pages (to navigate back)
+        const pageHistory = [];
+
+        // Show Welcome Page
+        function showWelcomePage() {
+            hideAllPages();
+            document.getElementById('welcome-page').style.display = 'block';
+            pageHistory.push('welcome-page');
+        }
+
+        // Show Registration Page
+        function showRegistrationPage() {
+            hideAllPages();
+            document.getElementById('registration-page').style.display = 'block';
+            pageHistory.push('registration-page');
+        }
+
+        // Show Waste Types Page
+        function showWasteTypesPage() {
+            hideAllPages();
+            document.getElementById('waste-types-page').style.display = 'block';
+            pageHistory.push('waste-types-page');
+        }
+
+        // Show Upload Waste Page with selected waste type
+        function showUploadWastePage(wasteType) {
+            hideAllPages();
+            document.getElementById('upload-waste-page').style.display = 'block';
+            document.getElementById('upload-waste-page').querySelector('h1').innerText = `Upload Your ${wasteType} Waste`;
+            pageHistory.push('upload-waste-page');
+        }
+
+        // Show End Page
+        function showEndPage() {
+            hideAllPages();
+            document.getElementById('end-page').style.display = 'block';
+            displayUploadedImage();  // Display the uploaded image on the End Page
+            pageHistory.push('end-page');
+        }
+
+        // Function to hide all pages
+        function hideAllPages() {
+            const pages = ['welcome-page', 'registration-page', 'waste-types-page', 'upload-waste-page', 'end-page'];
+            pages.forEach(page => {
+                document.getElementById(page).style.display = 'none';
+            });
+        }
+
+        // Navigate back to the previous page
+        function goBack() {
+            if (pageHistory.length > 1) {
+                pageHistory.pop();  // Remove the current page from history
+                const lastPage = pageHistory[pageHistory.length - 1];
+
+                hideAllPages();  // Hide all pages before showing the previous one
+
+                if (lastPage) {
+                    document.getElementById(lastPage).style.display = 'block';
+                }
+            }
+        }
+
+        // Toggle About Section
+        function toggleAboutSection() {
+            const aboutSection = document.getElementById('about-section');
+            if (aboutSection.style.display === 'none' || aboutSection.style.display === '') {
+                aboutSection.style.display = 'block';
+            } else {
+                aboutSection.style.display = 'none';
+            }
+        }
+
+        // Validate Registration Form
+        function validateForm() {
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let phone = document.getElementById("phone").value.trim();
+
+            if (name === "" || email === "" || phone === "") {
+                alert("Please fill in all fields.");
+            } else {
+                showWasteTypesPage();
+            }
+        }
+
+    </script>
+</body>
+</html>

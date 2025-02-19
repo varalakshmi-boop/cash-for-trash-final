@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Collectors Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1, h2 {
+            color: #4CAF50;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+        }
+        input[type="text"], input[type="tel"] {
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .people-list {
+            margin-top: 20px;
+        }
+        .person {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .person button {
+            background-color: #2196F3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Waste Collectors Portal</h1>
+    </header>
+    <div class="container">
+        <h2>Register to Provide Waste</h2>
+        <form id="registrationForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <h2>People Providing Waste</h2>
+        <div class="people-list" id="peopleList">
+            <!-- People will be listed here dynamically -->
+        </div>
+    </div>
+
+    <script>
+        const registrationForm = document.getElementById('registrationForm');
+        const peopleList = document.getElementById('peopleList');
+
+        registrationForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+
+            const personDiv = document.createElement('div');
+            personDiv.classList.add('person');
+
+            const personInfo = document.createElement('div');
+            personInfo.textContent = `${name} - ${phone}`;
+
+            const contactButton = document.createElement('button');
+            contactButton.textContent = 'Contact';
+            contactButton.addEventListener('click', function() {
+                alert(`Contacting ${name} at ${phone}`);
+            });
+
+            personDiv.appendChild(personInfo);
+            personDiv.appendChild(contactButton);
+            peopleList.appendChild(personDiv);
+
+            registrationForm.reset();
+        });
+    </script>
+</body>
+</html>

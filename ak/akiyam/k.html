@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cash for Trash - About Us</title>
+  <!-- Google Fonts Link for Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    .nav {
+      background-color: #27ae60;
+      padding: 10px;
+      text-align: right;
+    }
+    .nav button {
+      background-color: #fff;
+      color: #27ae60;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    
+    /* Modal Styles */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 40px;
+      border: 1px solid #888;
+      width: 90%;
+      max-width: 900px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      position: relative;
+    }
+    .close {
+      color: #aaa;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    /* Headings and Text */
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+      border-bottom: 3px solid #27ae60;
+      padding-bottom: 10px;
+      color: #2c3e50;
+    }
+    h2 {
+      font-size: 1.8em;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      color: #2c3e50;
+      border-left: 4px solid #27ae60;
+      padding-left: 10px;
+    }
+    h3 {
+      font-size: 1.5em;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+    p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    
+    /* Team Image */
+    .team-img {
+      width: 100%;
+      max-width: 300px;
+      display: block;
+      margin: 20px auto;
+      border-radius: 5px;
+    }
+    
+    /* Video Container */
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      margin: 20px auto;
+    }
+    .video-container video {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border: 1px solid #ddd;
+    }
+    
+    /* Process Steps */
+    .step {
+      background-color: #e9f5e9;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-left: 5px solid #27ae60;
+    }
+    
+    /* Call-to-Action */
+    .cta {
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #27ae60;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <div class="nav">
+    <button id="aboutBtn">About</button>
+  </div>
+  
+  <!-- Modal for About Us Content -->
+  <div id="aboutModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h1>About Us</h1>
+
+      <h2>Meet Our Team</h2>
+      <img src="team.jpg" alt="Our Team" class="team-img">
+      <p>
+        We are a team of dedicated eco warriors committed to reducing waste and decreasing pollution. Our passion drives us to create a cleaner and greener planet by turning trash into treasure.
+      </p>
+
+      <h2>Why We Started "Cash for Trash"</h2>
+      <p>
+        We launched this initiative to combat pollution caused by small, unmanaged waste. While municipal waste collectors handle large volumes of waste on a weekly basis, smaller items often end up scattered in empty grounds, water bodies, or on streets—causing significant environmental damage.
+        <strong>Cash for Trash</strong> offers a simple and rewarding solution for responsible waste disposal. By connecting users with waste collectors, we promote recycling and proper waste management. ♻️💰
+      </p>
+
+      <h2>How It Works</h2>
+      <p>
+        Our platform allows you to schedule waste pickups and earn money based on the weight of your waste. This system not only encourages recycling and responsible waste disposal but also helps create a healthier, cleaner environment.
+      </p>
+
+      <h3>Our Process</h3>
+      <div class="step">
+        <strong>Submit Your Request:</strong> Provide your name and contact details.
+      </div>
+      <div class="step">
+        <strong>We Collect:</strong> One of our team members will visit you to collect the items you want to sell.
+      </div>
+      <div class="step">
+        <strong>Receive Payment:</strong> Get paid in hard cash or via your Phonepay wallet—whichever you prefer.
+      </div>
+
+      <h2>Process Video</h2>
+      <p>
+        Watch our video that explains the journey of waste—from being left on roads to being properly recycled.
+      </p>
+      <div class="video-container">
+        <video controls poster="poster.jpg">
+          <source src="your-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <p class="cta">
+        Join us today and be part of the movement to transform waste into wealth while protecting our planet.
+      </p>
+    </div>
+  </div>
+  
+  <!-- JavaScript to Handle Modal Behavior -->
+  <script>
+    // Get modal element
+    var modal = document.getElementById("aboutModal");
+    // Get open modal button
+    var aboutBtn = document.getElementById("aboutBtn");
+    // Get close button
+    var closeModal = document.getElementById("closeModal");
+
+    // Open modal on clicking the "About" button
+    aboutBtn.addEventListener("click", function(){
+      modal.style.display = "block";
+    });
+
+    // Close modal on clicking the close button
+    closeModal.addEventListener("click", function(){
+      modal.style.display = "none";
+    });
+
+    // Close modal if user clicks outside of the modal content
+    window.addEventListener("click", function(event){
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>

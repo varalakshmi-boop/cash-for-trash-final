@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3/4 Btech-CSE (3-1)Syllabus</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .subject-list {
+      margin-bottom: 20px;
+    }
+    .subject-button {
+      display: inline-block;
+      margin: 5px;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .subject-button:hover {
+      background-color: #0056b3;
+    }
+    .syllabus-container {
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    pre{
+        font-family:Times New Roman;
+       }
+    h3{  color:green;
+      }
+    h4{
+        color:red;
+}
+  </style>
+</head>
+<body>
+
+<h1>3/4 Btech-CSE (3-1)Syllabus</h1>
+
+<div class="subject-list">
+  <button class="subject-button" onclick="showSyllabus('Computer Networks')">Computer Networks</button>
+  <button class="subject-button" onclick="showSyllabus('Advanced Data Structures')">Advanced Data Structures</button>
+   <button class="subject-button" onclick="showSyllabus('Web Technology')">Web Technology</button>
+  <button class="subject-button" onclick="showSyllabus('Software Engineering')">Software Engineering</button>
+  <button class="subject-button" onclick="showSyllabus('Machine Learning')">Machine Learning</button>
+  <button class="subject-button" onclick="showSyllabus('Intellectual Property Rights')">Intellectual Property Rights</button>
+  <button class="subject-button" onclick="showSyllabus('Honour-Mean Technologies')">Honour-Mean Technologies</button>
+</div>
+
+<div id="syllabus" class="syllabus-container">
+  <h2 style="color:#FFBB1A">Hi guys! చూసింది చాలు ఇంక  Start.... చేయండి చదవడం. </h2>
+  <p>Click on a subject name to see its syllabus.</p>
+</div>
+
+<script>
+  const syllabi = {
+    "Computer Networks": `
+      <h2><u>Computer Networks</u></h2>
+      <pre style="font-family:Times New Roman"><h3>SYLLABUS</h3>
+<h4>UNIT-I</h4>
+Introduction: Introduction to Computer Networks, Network Models (protocols): OSI reference model,
+TCP/IP reference model. Network topologies, types of networks (LAN, MAN, WAN).
+Physical layer: Data and Signals, Digital signals, Digital transmission (Digital-to-Digital, Analog-to-
+Digital), multiplexing (FDM, TDM), Transmission media.
+<h4>UNIT-II</h4>
+Data Link Layer: Error Detection &amp; Correction: types of errors, Error Detection (Parity, CRC, Check
+Sum), Error Correction (Using hamming code), Data Link Layer services: framing, flow control, error
+control. Error &amp; Flow control mechanisms: stop and wait, Go back N and selective repeat, High Level Data
+Link Control (HDLC).
+<h4>UNIT-III</h4>
+Medium access control: Random access: Aloha, Slotted Aloha, CSMA, CSMA/CD, and CSMA/CA, Local
+area networks: Ethernet, Types of ethernet (Token Ring, Fast Ethernet, Gigabit Ethernet), Personal Area
+Network: Bluetooth (Architecture), Wireless LANS: IEEE 802.11(Architecture, MAC sub layer).
+<h4>UNIT-IV</h4>
+Network layer: Network Layer Services, IPV4 Address, Subnetting, Super-netting, Classless addressing,
+Internet Protocol (IP, ARP, DHCP, ICMP), IPV6 Address format, Routing algorithms: Distance vector,
+Link state, Network Address Translation (NAT).
+<h4>UNIT-V</h4>
+Transport layer: UDP (User Datagram, Services, Applications), TCP (TCP Services, features, Segment,
+Connection establishment and termination, sliding window protocol, flow control and congestion control)
+Application Layer: Application Layer services and protocols including WWW, DNS, SMTP, POP, FTP,
+Telnet, HTTP, Firewalls.</pre>
+    `,
+      "Advanced Data Structures": `
+      <h2><u>Advanced Data Structures</u></h2>
+      <pre><h3>SYLLABUS</h3>
+<h4>UNIT-I</h4>
+ROLE OF ALGORITHMS IN COMPUTING: Review of Basic Concepts, Asymptotic Analysis of
+Recurrences: The Substitution Method, iterative method, Recursion-Tree Method, master method.
+Randomized Algorithms, Randomized Quicksort, Algorithm Analysis Techniques - Amortized Analysis.
+<h4>UNIT-II</h4>
+HIERARCHICAL DATA STRUCTURES: Red-Black trees: Properties of Red-Black Trees – Rotations
+– Insertion – Deletion , Splay Trees: Rotations – Insertion – Deletion ,B-trees+ trees, Heap trees, priority
+queues, Binomial Heaps, Fibonacci Heaps.
+<h4>UNIT-III</h4>
+GRAPHS: Elementary Graph Algorithms: Representations of Graphs – Breadth-First Search – Depth-First
+Search – Topological Sort – Strongly Connected Components, Connected graphs, Articulation points in a
+graph, minimum cost spanning tree. Network Flows-Max flow, min-cut theorem, Ford-Fulkerson,
+Edmonds-Karp algorithm, Bipartite Matching.
+<h4>UNIT-IV</h4>Partition ADT: Disjoint sets, operations on sets, weighted union or union by rank, path compression,
+Permutations and Combinations.
+Skip Lists: Skip list representation, Search and Update Operations on skip lists.
+<h4>UNIT-V</h4>
+Data Structures for Strings: Tries and Compressed Tries, Dictionaries allowing Errors in Queries, Suffix
+Trees and Suffix Arrays.
+String Matching – The naive string-matching algorithm, The Rabin-Karp algorithm, The Knuth-Morris-
+Pratt algorithm..</pre>
+    `,
+
+    "Web Technology": `
+      <h2><u>Web Technology</u></h2>
+      <pre><h3>SYLLABUS</h3>
+<h4>UNIT-I</h4>
+Introduction to HTML: Introduction to html, fundamentals of HTML elements.
+Document body, text, hyperlink, lists, tables, color and images, Forms &amp; frames.
+Cascading Style Sheets: Introduction, types of css, conflicting styles, css backgrounds, defining
+your own styles, properties and values in styles, formatting blocks, and layers;
+JavaScript: JavaScript basics, variables, operators, Control statements, arrays and functions,
+mathematical functions and string manipulation.
+<h4>UNIT-II</h4>
+Objects in JavaScript: built-in objects, exception handling, event model, regular expressions &amp; Data
+validation.
+XML: Introduction to XML, uses of XML, simple XML, and XML key components, DTD and
+Schemas, Well formed, using XML with application.XML, XSL and XSLT. Introduction to XSL, XML
+transformed simple example, XSL elements, transforming with XSLT
+<h4>UNIT-III</h4>
+Servlets: Lifecycle of a Servlet, a simple Servlet, the servlet API, the javax. servlet package, reading
+Servlet parameters, the javax.servlet.http package, Handling HTTP requests and responses, Session
+Tracking techniques.
+JSP: The anatomy of a JSP page, JSP processing, declarations, directives, expressions, code snippets,
+implicit objects, JSP Standard Action Tags, connecting to database in JSP.
+<h4>UNIT-IV</h4>Introduction to PHP: Basics of PHP, the anatomy of a PHP page; PHP data types Variables and data
+types, operators, expressions and statements, strings, arrays and functions.
+<h4>UNIT-V</h4>
+PHP and database access: Basic Relational Data Model, Relational database concepts, connecting to a
+MySQL database, retrieving and displaying results, modifying, updating and deleting data; MVC
+architecture: PHP and other web technologies: PHP and XML.</pre>
+    `,
+    "Software Engineering": `
+      <h2><u>Software Engineering</u></h2>
+      <pre><h3>SYLLABUS</h3>
+<h4>UNIT-I</h4>
+Introduction to Software Engineering: The evolving role of software, changing nature of software,
+software.myths.
+A Generic view of process: Software engineering- a layered technology, a process framework, the
+capability maturity model integration (CMMI), process patterns, process assessment, personal and
+team.process.models.
+Process models: The waterfall model, incremental process models, evolutionary process models,
+the.unified.process.
+<h4>UNIT-II</h4>
+Software Requirements: Functional and non-functional requirements, user requirements, system
+requirements, Interface specification, the software requirements document.
+System models: Context models, behavioral models, data models, object models, structured
+methods.
+<h4>UNIT-III</h4>
+Creating an architectural design: software architecture, data design, architectural styles and
+patterns, architectural design, conceptual model of UML, basic structural modeling, class diagrams,
+sequence diagrams, collaboration diagrams, use case diagrams, component diagrams.
+<h4>UNIT-IV</h4>
+Testing Strategies: black-box and white-box testing, validation testing, system testing, the art of
+debugging.
+Product metrics: Software quality, metrics for analysis model, metrics for design model, metrics for
+source code, metrics for testing, metrics for maintenance.
+<h4>UNIT-V</h4>
+Metrics for Process and Products: Software measurement, metrics for software quality.
+Risk management: Reactive Vs proactive risk strategies, software risks, risk identification, risk
+projection, risk refinement, RMMM, RMMM plan.
+
+Quality Management: software quality assurance, software reviews, formal
+technical reviews, statistical software quality assurance, software reliability, the ISO 9000 quality
+standards.</pre>
+    `,
+    "Machine Learning": `
+      <h2><u>Machine Learning</u></h2>
+      <pre><h3>SYLLABUS</h3>
+<h4>UNIT-I</h4>
+Introduction: Introduction to Machine learning, Goals and applications of Machine learning, Issues in
+machine learning, Types of machine learning. Supervised learning, Unsupervised learning, Reinforcement
+learning.
+Feature Selection: Filter, Wrapper, Embedded methods.
+Feature Normalization:- min-max normalization, z-score normalization, and constant factor
+normalization
+Introduction to Dimensionality Reduction: Principal Component Analysis(PCA), Linear
+Discriminant Analysis(LDA)
+<h4>UNIT-II</h4>
+Supervised Learning – I (Regression/Classification)
+Regression models: Simple Linear Regression, multiple linear Regression, Logistic Regression.
+Performance Metrics: Mean Absolute Error (MAE), Mean Squared Error (MSE),R-Squared error,
+Adjusted R Square.
+Classification models: Decision Trees-ID3, CART, Naive Bayes, K-Nearest-Neighbours (KNN) Support
+Vector Machines (SVM)
+<h4>UNIT-III</h4>
+Supervised Learning – II (Neural Networks)
+Neural Network Representation : Perceptrons, Activation Functions, Artificial Neural Networks (ANN)
+, Back Propagation Algorithm. Convolutional Neural Networks - Convolution and Pooling layers, , Recurrent
+Neural Networks (RNN).
+Classification Metrics: Confusion matrix, Precision, Recall, Accuracy, F-Score.
+<h4>UNIT-IV</h4>
+Model Validation in Classification : Cross Validation - Holdout Method, K-Fold, Regularization.
+Ensemble Methods: Boosting, Bagging, Random Forest.
+<h4>UNIT-V</h4>
+Unsupervised Learning : Clustering-K-means, Hierarchical clustering.
+Reinforcement Learning: Overview, Example, Markov Decision Process,Uses of Reinforcement
+Learning</pre>
+    `,
+    "Intellectual Property Rights": `
+      <h2><u>Intellectual Property Rights</u></h2>
+      <pre><h3>SYLLABUS</h3>
+
+<h4>UNIT-I</h4>
+Introduction to Intellectual property: Introduction, types of intellectual property, international
+organizations, agencies and treaties, importance of intellectual property rights.
+<h4>UNIT-II</h4>
+Trade Marks: Purpose and function of trademarks, acquisition of trade mark rights, protectable matter,
+selecting, and evaluating trade mark, trade mark registration processes.
+<h4>UNIT-III</h4>
+Law of copy rights: Fundamental of copy right law, originality of material, rights of reproduction, rights to
+perform the work publicly, copy right ownership issues, copy right registration, notice of copy right,
+international copy right law.
+Law of patents: Foundation of patent law, patent searching process, ownership rights and transfer
+<h4>UNIT-IV</h4>
+Trade Secrets: Trade secret law, determination of trade secrete status, liability for misappropriations of
+trade secrets, protection for submission, trade secrete litigation.
+Unfair competition: Misappropriation right of publicity, false advertising.
+<h4>UNIT-V</h4>
+New development of intellectual property: new developments in trade mark law; copy right law, patent
+law, intellectual property audits.
+International overview on intellectual property, international – trade mark law, copy right law, international
+patent law, and international development in trade secrets law.</pre>
+    `,
+"Honour-Mean Technologies": `
+      <h2><u>Honour-Mean Technologies</u></h2>
+      <pre><h3>SYLLABUS</h3>
+<h4>Unit-1</h4>
+
+<b>HTML 5: </b>Introduction to Web, Overview of Web Technologies, HTML Introduction, 
+DOCTYPE Declaration, Types of Elements, HTML Elements Attributes, Metadata Element,
+Division and Span Elements, List Element, Link Element, Character Entities,
+HTML5 Global Attributes, Creating Table Colspan/ Rowspan Attributes, border,
+cellspacing and cellpadding attributes, Creating Form Elements, 
+Input Elements Attributes, Color and Date Pickers.
+
+<b>JavaScript: </b>Java script elements, let, statements, control statements,
+ functions, Arrays and methods, Strings.
+
+<h4>Unit-2</h4>
+
+<b>Java script ES features</b>- let, var and const, destructuring, 
+spread and rest operators, higher order functions, modules,
+classes and objects. Introduction to Asynchronous Programming,
+Callbacks, Promises, Async and Await, Executing Network Requests using Fetch API,
+Creating and consuming Modules.
+<b>Node.js:</b> Why and What Node.js, How to use Node.js, Create a web server in Node.js, 
+Node Package Manager, Modular programming in Node.js, Restarting Node Application, File Operations.
+
+<h4>Unit-3</h3>
+
+<b>Express.js: </b>Express Development Environment, defining a route, Handling Routes, 
+Route and Query Parameters, How Middleware works, Chaining of Middleware, 
+Types of Middleware, connecting to MongoDB with Mongoose, 
+Validation Types and Defaults, Models, CRUD Operations, API Development, 
+Why Session management, Cookies, Sessions, Why and What Security, Helmet Middleware, 
+Using a Template Engine Middleware, Stylus CSS Pre-processor.
+
+<b>Typescript:</b> Installing TypeScript, Basics of TypeScript, Function, 
+Parameter Types and Return Types, Arrow Function, Function Types, 
+Optional and Default Parameters, Rest Parameter, Creating an Interface, 
+Duck Typing, Function Types, Extending Interfaces, Classes, Constructor, 
+Access Modifiers, Properties and Methods, Creating and using Namespaces, 
+Creating and using Modules, Module Formats and Loaders, Module Vs Namespace, 
+What is Generics, What are Type Parameters, Generic Functions, Generic Constraints.
+
+<h4>Unit-4</h4>
+
+<b>MongoDB:</b> Introduction Module Overview, Document Database Overview, 
+Understanding JSON, MongoDB Structure and Architecture, MongoDB Remote Management, 
+Installing MongoDB on the local computer (Mac or Windows), Introduction to MongoDB Cloud, 
+Create MongoDB Atlas Cluster, GUI tools Overview, Install and Configure MongoDB Compass, 
+Introduction to the MongoDB Shell, MongoDB Shell JavaScript Engine, MongoDB Shell JavaScript Syntax, 
+Introduction to the MongoDB Data Types, Introduction to the CRUD Operations on documents, 
+Create and Delete Databases and Collections, Introduction to MongoDB Queries.
+
+<h4>Unit-5</h4>
+
+<b>Angular JS: </b>What is Angular, Features of Angular, Angular Application Setup, 
+Components and Modules, Executing Angular Application, Elements of Template, 
+Change Detection, Structural Directives ngIf, ngFor, ngSwitch, 
+Custom Structural Directive, Attribute Directives ngStyle, ngClass, 
+Custom Attribute Directive, Property Binding, Attribute Binding, 
+Style and Event Binding, Built in Pipes, Passing Parameters to Pipes, 
+Nested Components Basics, Passing data from Container Component to Child Component, 
+Passing data from Child Component to ContainerComponent, Shadow DOM, 
+Component Life Cycle, Template Driven Forms, Model Driven Forms or Reactive Forms, 
+Custom Validators in Reactive Forms, Custom Validators in Template Driven forms, 
+Dependency Injection,Services Basics, RxJS Observables, 
+Server Communication using HttpClient, 
+Communicating with different backend services using Angular HttpClient, 
+Routing Basics, Router Links, Route Guards, 
+Asynchronous Routing. Nested Routes.</pre>
+    `,
+
+  };
+
+  function showSyllabus(subject) {
+    const syllabusDiv = document.getElementById('syllabus');
+    syllabusDiv.innerHTML = syllabi[subject];
+  }
+</script>
+
+</body>
+</html>

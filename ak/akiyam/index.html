@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash for Trash</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Cash for Trash Logo" class="logo">
+        <h1>Cash for Trash</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#verification">Verification</a></li>
+                <li><a href="#waste-selection">Choose Waste Type</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <img src="waste.jpg" alt="Waste Image">
+        <p>Welcome to Cash for Trash. Turn waste into cash easily!</p>
+    </section>
+
+    <section id="verification">
+        <h2>Verification</h2>
+        <p>Enter your details for verification.</p>
+        <input type="text" placeholder="Enter Name">
+        <input type="text" placeholder="Phone Number">
+        <button>Verify</button>
+    </section>
+
+    <section id="waste-selection">
+        <h2>Choose Waste Type</h2>
+        <div class="waste-options">
+            <button onclick="showWaste('e-waste')">E-Waste</button>
+            <button onclick="showWaste('paper-waste')">Paper Waste</button>
+            <button onclick="showWaste('old-clothes')">Old Clothes</button>
+        </div>
+        <div id="waste-content"></div>
+    </section>
+
+</body>
+</html>

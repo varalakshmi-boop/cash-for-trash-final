@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash for Trash</title>
+    <!-- Google Fonts Link for Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('cash for trash.jpg'); /* Replace with your background image URL */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        h1 {
+            font-size: 30px;
+            color: #000;
+        }
+        a {
+            text-decoration: none;
+            color: #ffcc00;
+            font-size: 20px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        /* Welcome Page Styles */
+        .welcome-container {
+            background-image: url('background.jpg'); /* Replace with your welcome background image */
+            background-size: cover;
+            color: white;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .welcome-container h1 {
+            font-size: 50px;
+        }
+        /* Registration Page Styles */
+        .registration-container input, .registration-container button {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            border-radius: 4px;
+        }
+        .registration-container input {
+            border: 1px solid #ccc;
+        }
+        .registration-container button {
+            background-color: #007bff;
+            color: white;
+        }
+        /* Waste Types Page */
+        .waste-types-container {
+            text-align: center;
+            padding: 50px 0;
+        }
+        .waste-types-container table {
+            width: 100%;
+            margin-top: 20px;
+        }
+        .waste-types-container td {
+            padding: 20px;
+            text-align: center;
+        }
+        .waste-types-container img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+        .waste-types-container a {
+            color: #007bff;
+            font-size: 18px;
+            text-decoration: none;
+        }
+        .waste-types-container p {
+            color: green;
+        }
+        /* Upload Waste Page */
+        .upload-container textarea, .upload-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            border-radius: 4px;
+        }
+        .upload-container button {
+            background-color: #28a745;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+        }
+        .upload-container textarea {
+            height: 150px;
+        }
+        /* Back Button */
+        .back-button {
+            background-color: #28a745;
+            color: white;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            margin: 0 auto;
+        }
+        .back-button:hover {
+            background-color: #218838;
+        }
+        /* Upload Image Button */
+        .upload-image-button {
+            display: inline-block;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            text-align: center;
+        }
+        .upload-image-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        .upload-image-button:active {
+            transform: scale(0.95);
+        }
+        #image-preview {
+            margin-top: 10px;
+            max-width: 200px;
+            height: auto;
+            display: block;
+        }
+        .uploaded-image {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .uploaded-image img {
+            max-width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+        }
+        /* Updated About Us Section */
+        #about-us {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            color: #333;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        #about-us h1 {
+            font-size: 35px;
+            color: #2c3e50;
+            border-bottom: 3px solid #27ae60;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        #about-us h2 {
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            border-left: 4px solid #27ae60;
+            padding-left: 10px;
+        }
+        #about-us h3 {
+            font-size: 1.5em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        #about-us p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .team-img {
+            width: 100%;
+            max-width: 300px;
+            display: block;
+            margin: 20px auto;
+            border-radius: 5px;
+        }
+        .step {
+            background-color: #e9f5e9;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 5px solid #27ae60;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: 20px auto;
+        }
+        .video-container video {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border: 1px solid #ddd;
+        }
+        .cta {
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #27ae60;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Welcome Page -->
+    <div class="welcome-container" id="welcome-page" style="display: block;">
+        <h1 id="welcome-heading" style="color:black;font-family:italic;">Welcome to Ca$h for Tra$h</h1>
+        <p style="color:brown;"><i>"Your waste, our responsibility. We collect it and you earn from it!"</i></p>
+        <button onclick="showRegistrationPage()">Go to Registration</button>
+        <button onclick="toggleAboutUs()">About Us</button>
+        
+        <!-- Updated About Us Section -->
+        <div id="about-us">
+            <div class="container">
+                <h1>About Us</h1>
+                <h2>Meet Our Team</h2>
+                <img src="team.jpg" alt="Our Team" class="team-img">
+                <p>
+                    We are a team of dedicated eco warriors committed to reducing waste and decreasing pollution. Our passion drives us to create a cleaner and greener planet by turning trash into treasure.
+                </p>
+                <h2>Why We Started "Cash for Trash"</h2>
+                <p>
+                    We launched this initiative to combat pollution caused by small, unmanaged waste. While municipal waste collectors handle large volumes of waste weekly, smaller items often end up scattered in empty grounds, water bodies, or streets—causing significant environmental damage.
+                    <strong>Cash for Trash</strong> offers a simple and rewarding solution for responsible waste disposal. By connecting users with waste collectors, we promote recycling and proper waste management. ♻️💰
+                </p>
+                <h2>How It Works</h2>
+                <p>
+                    Our platform allows you to schedule waste pickups and earn money based on the weight of your waste. This not only encourages recycling but also helps create a cleaner, healthier environment.
+                </p>
+                <h3>Our Process</h3>
+                <div class="step">
+                    <strong>Submit Your Request:</strong> Provide your name and contact details.
+                </div>
+                <div class="step">
+                    <strong>We Collect:</strong> One of our team members will visit you to collect the items you want to sell.
+                </div>
+                <div class="step">
+                    <strong>Receive Payment:</strong> Get paid in hard cash or via your Phonepay wallet—whichever you prefer.
+                </div>
+                <h2>Process Video</h2>
+                <p>
+                    Watch our video that explains the journey of waste—from being left on roads to being properly recycled.
+                </p>
+                <div class="video-container">
+                    <video controls poster="poster.jpg">
+                        <source src="your-video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <p class="cta">
+                    Join us today and be part of the movement to transform waste into wealth while protecting our planet.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Registration Page -->
+    <div class="container" id="registration-page" style="display: none;">
+        <h1>Register Your Account</h1>
+        <form class="registration-container" id="registration-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" required>
+            <button type="button" onclick="validateForm()">Submit</button>
+        </form>
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+
+    <!-- Waste Types Page -->
+    <div class="container" id="waste-types-page" style="display: none;">
+        <h1 style="font-family:italic">Select Waste Type</h1>
+        <p style="color:green;">Select the type of waste you want to sell.</p>
+        <table class="waste-types-container">
+            <tr>
+                <td><a href="javascript:void(0);" onclick="showUploadWastePage('E')"><img src="e-waste.jpg" alt="E-Waste"><br>E-Waste</a></td>
+                <td><a href="javascript:void(0);" onclick="showUploadWastePage('Plastic')"><img src="plastic.jpg" alt="Plastic Waste"><br>Plastic Waste</a></td>
+                <td><a href="javascript:void(0);" onclick="showUploadWastePage('Metal')"><img src="metal.jpg" alt="Metal Waste"><br>Metal Waste</a></td>
+            </tr>
+            <tr>
+                <td><a href="javascript:void(0);" onclick="showUploadWastePage('Old Clothes')"><img src="old-clothes.jpg" alt="Old Clothes"><br>Old Clothes</a></td>
+                <td><a href="javascript:void(0);" onclick="showUploadWastePage('Others')"><img src="others.jpg" alt="Other Waste"><br>Others</a></td>
+            </tr>
+        </table>
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+
+    <!-- Upload Waste Page -->
+    <div class="container" id="upload-waste-page" style="display: none;">
+        <h1>Upload Your Waste</h1>
+        <form class="upload-container">
+            <label for="waste-description"><b>Description about Waste:</b></label>
+            <textarea id="waste-description" required></textarea>
+            <label for="pickup-date"><b>Pickup Date:</b></label>
+            <input type="date" id="pickup-date" required>
+            <label for="location"><b>Your Location:</b></label>
+            <input type="text" id="location" placeholder="Enter your location manually" required>
+            <button type="button" onclick="getUserLocation()">Detect My Location</button>
+            <label for="file-upload" class="upload-image-button">
+                Upload Your Image
+                <input type="file" id="file-upload" style="display: none;" onchange="handleFileUpload()" accept="image/*">
+            </label>
+            <div id="image-preview-container" style="margin-top: 15px;">
+                <img id="image-preview" src="" alt="Uploaded Image" style="display: none; max-width: 200px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2);">
+            </div>
+            <div class="uploaded-image" id="uploaded-image"></div>
+            <button type="button" onclick="showEndPage()">Confirm & Proceed</button>
+        </form>
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+
+    <!-- End Page -->
+    <div class="container" id="end-page" style="display: none;">
+        <h1>Thank You!</h1>
+        <p style="color:green;">Your request has been successfully submitted.</p>
+        <div class="uploaded-image" id="uploaded-image"></div>
+        <div class="contact-details">
+            <h2>Contact Us</h2>
+            <p style="font-family:italic; color:black;">Eco Warriors</p>
+            <p style="font-family:italic; color:black;">Phone: +91 9032793033</p>
+            <p style="font-family:italic; color:black;">Email: support@cashfortrash.com</p>
+        </div>
+        <button class="back-button" onclick="showWelcomePage()">Back to Home</button>
+    </div>
+
+    <script>
+        let uploadedImageUrl = '';  // Variable to hold the uploaded image URL
+        const pageHistory = [];
+
+        function showWelcomePage() {
+            hideAllPages();
+            document.getElementById('welcome-page').style.display = 'block';
+            pageHistory.push('welcome-page');
+        }
+        function showRegistrationPage() {
+            hideAllPages();
+            document.getElementById('registration-page').style.display = 'block';
+            pageHistory.push('registration-page');
+        }
+        function showWasteTypesPage() {
+            hideAllPages();
+            document.getElementById('waste-types-page').style.display = 'block';
+            pageHistory.push('waste-types-page');
+        }
+        function showUploadWastePage(wasteType) {
+            hideAllPages();
+            document.getElementById('upload-waste-page').style.display = 'block';
+            document.getElementById('upload-waste-page').querySelector('h1').innerText = `Upload Your ${wasteType} Waste`;
+            pageHistory.push('upload-waste-page');
+        }
+        function showEndPage() {
+            hideAllPages();
+            document.getElementById('end-page').style.display = 'block';
+            displayUploadedImage();
+            pageHistory.push('end-page');
+        }
+        function hideAllPages() {
+            const pages = ['welcome-page', 'registration-page', 'waste-types-page', 'upload-waste-page', 'end-page'];
+            pages.forEach(page => {
+                document.getElementById(page).style.display = 'none';
+            });
+        }
+        function goBack() {
+            if (pageHistory.length > 1) {
+                pageHistory.pop();
+                const lastPage = pageHistory[pageHistory.length - 1];
+                hideAllPages();
+                if (lastPage) {
+                    document.getElementById(lastPage).style.display = 'block';
+                }
+            } else {
+                showWelcomePage();
+            }
+        }
+        function handleFileUpload() {
+            const fileInput = document.getElementById('file-upload');
+            const imagePreview = document.getElementById('image-preview');
+            if (fileInput.files && fileInput.files[0]) {
+                let reader = new FileReader();
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                    imagePreview.style.display = "block";
+                };
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+        }
+        function getUserLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    function (position) {
+                        const latitude = position.coords.latitude;
+                        const longitude = position.coords.longitude;
+                        fetch(`https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`)
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.display_name) {
+                                    document.getElementById("location").value = data.display_name;
+                                } else {
+                                    document.getElementById("location").value = "Location not found, enter manually.";
+                                }
+                            })
+                            .catch(error => {
+                                console.error("Error fetching location:", error);
+                                alert("Error fetching location. Please enter manually.");
+                            });
+                    },
+                    function (error) {
+                        alert("Unable to retrieve location. Please enter manually.");
+                    }
+                );
+            } else {
+                alert("Geolocation is not supported by your browser.");
+            }
+        }
+        function toggleAboutUs() {
+            const aboutUsSection = document.getElementById('about-us');
+            if (aboutUsSection.style.display === 'none' || aboutUsSection.style.display === '') {
+                aboutUsSection.style.display = 'block';
+            } else {
+                aboutUsSection.style.display = 'none';
+            }
+        }
+        function displayUploadedImage() {
+            if (uploadedImageUrl) {
+                const imageContainer = document.getElementById('uploaded-image');
+                const imageElement = document.createElement('img');
+                imageElement.src = uploadedImageUrl;
+                imageContainer.appendChild(imageElement);
+            }
+        }
+        function validateForm() {
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let phone = document.getElementById("phone").value.trim();
+            if (name === "" || email === "" || phone === "") {
+                alert("Please fill in all fields.");
+            } else {
+                showWasteTypesPage();
+            }
+        }
+    </script>
+</body>
+</html>

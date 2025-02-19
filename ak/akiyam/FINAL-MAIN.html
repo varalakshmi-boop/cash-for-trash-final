@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash for Trash</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { 
+            background: url('background.jpg') no-repeat center center/cover;
+            text-align: center; 
+            padding: 20px; 
+        }
+        .container { 
+            width: 900px; 
+            height: 600px; 
+            margin: auto; 
+            background: rgba(255, 255, 255, 0.9); 
+            padding: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.2); 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+        }
+        h1 { 
+            color: #2c3e50; 
+            font-family: 'Poppins', sans-serif; 
+            font-size: 36px; 
+            font-weight: 700; 
+        }
+        button, input[type="submit"] { background: #27ae60; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; width: 100%; margin-top: 10px; }
+        button:hover, input[type="submit"]:hover { background: #219150; }
+        input { width: 100%; padding: 8px; margin-top: 10px; border: 1px solid #ccc; border-radius: 5px; }
+        a { text-decoration: none; color: #2980b9; font-weight: bold; }
+        a:hover { text-decoration: underline; }
+        .waste-container img { width: 100px; margin: 10px; cursor: pointer; }
+        .welcome-image { width: 300px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container" id="welcomePage">
+        <h1>Welcome to Cash for Trash</h1>
+        <img src="welcome-image.jpg" alt="Welcome Image" class="welcome-image">
+        <button onclick="showPage('signUpPage')">Continue</button>
+    </div>
+    
+    <div class="container" id="signUpPage" style="display:none;">
+        <h2>Sign Up</h2>
+        <input type="text" placeholder="Name" id="signUpName">
+        <input type="email" placeholder="Email" id="signUpEmail">
+        <input type="tel" placeholder="Phone Number" id="signUpPhone">
+        <input type="submit" value="Sign Up" onclick="showPage('mainPage')">
+        <p>Already signed up? <a href="#" onclick="showPage('loginPage')">Login now</a></p>
+    </div>
+    
+    <div class="container" id="loginPage" style="display:none;">
+        <h2>Login</h2>
+        <input type="text" placeholder="Name" id="loginName">
+        <input type="tel" placeholder="Phone Number" id="loginPhone">
+        <input type="submit" value="Continue" onclick="showPage('mainPage')">
+    </div>
+    
+    <div class="container" id="mainPage" style="display:none;">
+        <h1>Welcome to Cash for Trash</h1>
+        <p>What would you like to sell?</p>
+        <div class="waste-container">
+            <img src="ewaste.png" alt="E-Waste" onclick="showPage('eWastePage')">
+            <img src="clothes.png" alt="Old Clothes">
+            <img src="metal.png" alt="Metal Waste">
+            <img src="plastic.png" alt="Plastic Waste">
+        </div>
+    </div>
+    
+    <div class="container" id="eWastePage" style="display:none;">
+        <h2>E-Waste</h2>
+        <input type="file" accept="image/*">
+        <input type="date">
+        <input type="submit" value="Confirm" onclick="showPage('confirmPage')">
+    </div>
+    
+    <div class="container" id="confirmPage" style="display:none;">
+        <h2>Thanks for Selling!</h2>
+    </div>
+    
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.container').forEach(page => page.style.display = 'none');
+            document.getElementById(pageId).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
